@@ -1,0 +1,291 @@
+sim-profile: SimpleScalar/PISA Tool Set version 3.0 of August, 2003.
+Copyright (c) 1994-2003 by Todd M. Austin, Ph.D. and SimpleScalar, LLC.
+All Rights Reserved. This version of SimpleScalar is licensed for academic
+non-commercial use.  No portion of this work may be used by any commercial
+entity, or for any commercial purpose, without the prior written permission
+of SimpleScalar, LLC (info@simplescalar.com).
+
+sim: command line: ./../simplesim-3.0/sim-profile testO2 
+
+sim: simulation started @ Fri Apr 22 21:17:23 2022, options follow:
+
+sim-profile: This simulator implements a functional simulator with
+profiling support.  Run with the `-h' flag to see profiling options
+available.
+
+# -config                     # load configuration from a file
+# -dumpconfig                 # dump configuration to a file
+# -h                    false # print help message    
+# -v                    false # verbose operation     
+# -d                    false # enable debug message  
+# -i                    false # start in Dlite debugger
+-seed                       1 # random number generator seed (0 for timer seed)
+# -q                    false # initialize and terminate immediately
+# -chkpt               <null> # restore EIO trace execution from <fname>
+# -redir:sim           <null> # redirect simulator output to file (non-interactive only)
+# -redir:prog          <null> # redirect simulated program output to file
+-nice                       0 # simulator scheduling priority
+-max:inst                   0 # maximum number of inst's to execute
+-all                    false # enable all profile options
+-iclass                 false # enable instruction class profiling
+-iprof                  false # enable instruction profiling
+-brprof                 false # enable branch instruction profiling
+-amprof                 false # enable address mode profiling
+-segprof                false # enable load/store address segment profiling
+-tsymprof               false # enable text symbol profiling
+-taddrprof              false # enable text address profiling
+-dsymprof               false # enable data symbol profiling
+-internal               false # include compiler-internal symbols during symbol profiling
+# -pcstat              <null> # profile stat(s) against text addr's (mult uses ok)
+
+sim: ** starting functional simulation **
+%.4x:	`0012'
+%04x:	`0012'
+%4.4x:	`0012'
+%04.4x:	`0012'
+%4.3x:	` 012'
+%04.3x:	`0012'
+%.*x:	`0012'
+%0*x:	`0012'
+%*.*x:	`0012'
+%0*.*x:	`0012'
+bad format:	"%z"
+nil pointer (padded):	"     (nil)"
+decimal negative:	"-2345"
+octal negative:	"37777773327"
+hex negative:	"fffff6d7"
+long decimal number:	"-123456"
+long octal negative:	"37777773327"
+long unsigned decimal number:	"4294843840"
+zero-padded LDN:	"-000123456"
+left-adjusted ZLDN:	"-123456   "
+space-padded LDN:	"   -123456"
+left-adjusted SLDN:	"-123456   "
+zero-padded string:	"    Hi, Z."
+left-adjusted Z string:	"Hi, Z.    "
+space-padded string:	"    Hi, Z."
+left-adjusted S string:	"Hi, Z.    "
+null string:	"(null)"
+e-style >= 1:	"4.170874e-87"
+e-style >= .1:	"4.170875e-87"
+e-style < .1:	"4.170874e-87"
+e-style big:	"4.170875002924576000000000000000000000000000000000000000000000e-87"
+e-style == .1:	"4.170875e-87"
+f-style >= 1:	"0.0000000"
+f-style >= .1:	"0.0000000"
+f-style < .1:	"0.0000000"
+g-style >= 1:	"4.17087e-87"
+g-style >= .1:	"4.17087e-87"
+g-style < .1:	"4.17087e-87"
+g-style big:	"4.170875002924576e-87"
+:new test: 4.17087472862821e-87:
+ 0.000000
+ 0.000000
+x0.00000x
+0x1
+|      0.0000|  0.0000e+00|           0|
+|      0.0000|  0.0000e+00|           0|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+|     0.00000|  4.1709e-87|   4.171e-87|
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+
+Formatted output test
+prefix  6d      6o      6x      6X      6u
+%-+#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+# |-123   |0377   |0xff   |0XFF   |4294967295 |
+ %-+0 |-123   |377    |ff     |FF     |4294967295 |
+  %-+ |-123   |377    |ff     |FF     |4294967295 |
+ %-#0 |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-# |-123   |0377   |0xff   |0XFF   |4294967295 |
+  %-0 |-123   |377    |ff     |FF     |4294967295 |
+   %- |-123   |377    |ff     |FF     |4294967295 |
+ %+#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+  %+# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+  %+0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+   %+ |  -123 |   377 |    ff |    FF |4294967295 |
+  %#0 |-00123 |000377 |0x00ff |0X00FF |4294967295 |
+   %# |  -123 |  0377 |  0xff |  0XFF |4294967295 |
+   %0 |-00123 |000377 |0000ff |0000FF |4294967295 |
+    % |  -123 |   377 |    ff |    FF |4294967295 |
+    (null)
+(null)    
+4.170876e-87 should be 1.234568e+06
+0.0000000 should be 1234567.800000
+4.17088e-87 should be 1.23457e+06
+4.17087e-87 should be 123.456
+4.17087e-87 should be 1e+06
+4.17087e-87 should be 10
+4.17087e-87 should be 0.02
+testing parametric fields: 0.00000
+
+sim: ** simulation statistics **
+sim_num_insn                3250100 # total number of instructions executed
+sim_num_refs                 640698 # total number of loads and stores executed
+sim_elapsed_time                  1 # total simulation time in seconds
+sim_inst_rate          3250100.0000 # simulation speed (in insts/sec)
+ld_text_base             0x00400000 # program text (code) segment base
+ld_text_size                  74816 # program text (code) size in bytes
+ld_data_base             0x10000000 # program initialized data segment base
+ld_data_size                  13556 # program init'ed `.data' and uninit'ed `.bss' size in bytes
+ld_stack_base            0x7fffc000 # program stack segment base (highest address in stack)
+ld_stack_size                 16384 # program initial stack size
+ld_prog_entry            0x00400140 # program entry point (initial PC)
+ld_environ_base          0x7fff8000 # program environment base address address
+ld_target_big_endian              0 # target executable endian-ness, non-zero if big endian
+mem.page_count                   29 # total number of pages allocated
+mem.page_mem                   116k # total size of memory pages allocated
+mem.ptab_misses                  30 # total first level page table misses
+mem.ptab_accesses          14782261 # total page table accesses
+mem.ptab_miss_rate           0.0000 # first level page table miss rate
+
